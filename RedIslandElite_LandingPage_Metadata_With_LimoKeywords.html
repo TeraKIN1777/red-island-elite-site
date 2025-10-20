@@ -1,0 +1,241 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Red Island Elite Services — Executive-Class Chauffeur & Concierge Services</title>
+  <style>
+    :root {
+      --black: #000000;
+      --gold: #C9A43A;
+      --maroon: #7A1E1E;
+      --offwhite: #F8F8F8;
+      --text: #222;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: 'Lato', Arial, sans-serif; color: var(--text); background: #fff; line-height: 1.55; }
+    h1, h2, h3 { font-family: 'Montserrat', Arial, sans-serif; margin: 0 0 10px; }
+    a { color: var(--gold); text-decoration: none; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+    .hero {
+      position: relative;
+      background: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)), url('https://images.unsplash.com/photo-1493238792000-8113da705763?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
+      color: #fff;
+      padding: 120px 0 100px;
+      text-align: center;
+    }
+    .brand { display: flex; align-items: center; justify-content: center; gap: 14px; margin-bottom: 16px; }
+    .brand img { height: 56px; width: auto; filter: brightness(1) contrast(1.1); }
+    .headline { font-size: 36px; color: var(--gold); letter-spacing: .5px; margin-bottom: 10px; }
+    .subhead { font-size: 18px; opacity: .95; margin-bottom: 26px; }
+    .btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .btn {
+      padding: 12px 20px; border-radius: 6px; border: 2px solid var(--gold);
+      font-weight: 700; letter-spacing: .3px; cursor: pointer; transition: .2s all; font-family: 'Montserrat', Arial, sans-serif;
+    }
+    .btn-primary { background: var(--gold); color: #111; border-color: var(--gold); }
+    .btn-outline { background: transparent; color: #fff; border-color: var(--maroon); }
+    .btn-primary:hover { transform: translateY(-1px); filter: brightness(1.05); }
+    .btn-outline:hover { background: var(--maroon); }
+
+    .section { padding: 70px 0; }
+    .divider { height: 2px; background: linear-gradient(90deg,var(--maroon),transparent); width: 120px; margin: 18px 0; }
+    .value h2 { color: var(--gold); }
+    .muted { color: #555; }
+
+    .cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 20px; }
+    .card { background: var(--offwhite); border: 1px solid #eee; border-radius: 10px; padding: 18px; }
+    .card h3 { color: #111; font-size: 18px; margin: 8px 0; }
+    .card p { color: #444; margin: 0; }
+    .card .icon { font-size: 24px; }
+
+    @media (max-width: 900px) { .cards { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px) { .cards { grid-template-columns: 1fr; } .headline { font-size: 28px; } }
+
+    .input { background: linear-gradient(180deg, rgba(122,30,30,.92), rgba(122,30,30,.92)), url('https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat; color: #fff; }
+    .input h2 { color: #fff; }
+    .forms { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 16px; }
+    @media (max-width: 900px) { .forms { grid-template-columns: 1fr; } }
+
+    form { background: #fff; border-radius: 10px; padding: 18px; border: 1px solid #eee; color: #222; }
+    label { font-size: 13px; font-weight: 700; color: #333; display: block; margin: 8px 0 6px; }
+    input, select, textarea { width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ddd; font-size: 14px; }
+    textarea { min-height: 90px; resize: vertical; }
+    .form-title { font-family: 'Montserrat', Arial, sans-serif; font-size: 18px; margin: 0 0 10px; color: var(--maroon); }
+    .submit { margin-top: 10px; }
+
+    .success-message { display: none; padding: 10px; margin-top: 12px; background: #dff0d8; border-left: 4px solid #3c763d; color: #3c763d; }
+
+    footer { background: #000; color: #eee; padding: 28px 0; border-top: 3px solid var(--maroon); text-align: center; }
+    footer .logo { height: 38px; margin-bottom: 10px; }
+    .legal { font-size: 12px; color: #aaa; margin-top: 6px; }
+  </style>
+  <script>
+    function handleSubmit(event, formId) {
+      event.preventDefault();
+      const form = document.getElementById(formId);
+      const data = new FormData(form);
+      fetch(form.action, {
+        method: 'POST',
+        body: data
+      }).then(response => {
+        if (response.ok) {
+          form.reset();
+          document.getElementById(formId + '-success').style.display = 'block';
+        }
+      });
+    }
+  </script>
+
+  <meta name="description" content="Red Island Elite offers Executive-Class Chauffeur, Black Car, Limousine, and Luxury Concierge Services in Prince Edward Island. Tailored for VIPs, corporate leaders, and prestige clients.">
+  <meta name="keywords" content="Black Car Service, Limousine Service PEI, Chauffeur Limousine Prince Edward Island, Private Chauffeur PEI, Luxury Transport Prince Edward Island, Concierge Services, VIP Chauffeur Canada, Executive Chauffeur Service, PEI Chauffeur Service, Luxury Car Service Charlottetown, Discreet Private Driver, VIP Transportation PEI, Corporate Chauffeur Service, Premium Chauffeur PEI, PEI Luxury Concierge, Professional Black Car PEI, High-End Transport Prince Edward Island, Limo PEI, PEI Limo Hire, Executive Limo Service, Wedding Limo PEI, Airport Limo Charlottetown, Private Limo Tour PEI">
+  <meta name="author" content="Red Island Elite Services">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.redislandelite.com/" />
+  <meta property="og:title" content="Red Island Elite Services – Prince Edward Island Chauffeur & Limousine Concierge" />
+  <meta property="og:description" content="Executive-Class Chauffeur, Limousine, and Concierge Services. Because first impressions matter." />
+  <meta property="og:image" content="https://www.redislandelite.com/assets/ries-preview.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://www.redislandelite.com/" />
+  <meta name="twitter:title" content="Red Island Elite – VIP Chauffeur & Limousine Service in PEI" />
+  <meta name="twitter:description" content="Luxury limousine and chauffeur service for executives, corporate leaders, and prestige guests." />
+  <meta name="twitter:image" content="https://www.redislandelite.com/assets/ries-preview.jpg" />
+
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="brand">
+      <img src="RIES Logo_finallogo.png" alt="Red Island Elite Services Crest" />
+      <div style="font-family:'Montserrat',Arial,sans-serif; font-weight:800; letter-spacing:.5px;">RED ISLAND ELITE SERVICES</div>
+    </div>
+    <h1 class="headline">Executive-Class Chauffeur & Concierge Services — Coming Soon to Prince Edward Island.</h1>
+    <p class="subhead">Because every journey deserves precision, comfort, and quiet confidence.</p>
+    <div class="btns">
+      <a href="#early" class="btn btn-primary">Join the Early Access List</a>
+      <a href="#partner" class="btn btn-primary">Request Preferred Partnership</a>
+    </div>
+  </div>
+</section>
+
+<!-- VALUE -->
+<section class="section value">
+  <div class="container">
+    <h2>Because First Impressions Matter.</h2>
+    <div class="divider"></div>
+    <p class="muted">In Prince Edward Island, elevated clientele and discerning VIPs have limited access to premium ground transport. Red Island Elite exists to change that.</p>
+    <p class="muted">We’re delivering a private chauffeur and luxury car experience tailored for corporate leaders, VIP guests, and those who prefer — or require — a service that reflects their standards.</p>
+    <p><strong>Precision. Professionalism. Presentation.</strong> This is not just transport — it’s a reflection of who you are, and how your guests are treated.</p>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section services">
+  <div class="container">
+    <h2 style="color:var(--gold)">What You Can Expect</h2>
+    <div class="divider"></div>
+    <div class="cards">
+      <div class="card"><div class="icon">🚘</div><h3>Executive Transfers</h3><p>Discreet, professional chauffeur services for corporate, airport, and event clients.</p></div>
+      <div class="card"><div class="icon">🎩</div><h3>Private Concierge</h3><p>Personalized assistance, itinerary coordination, and local VIP care.</p></div>
+      <div class="card"><div class="icon">💍</div><h3>Event & VIP Services</h3><p>Weddings, galas, and high-profile event transport with presentation standards.</p></div>
+      <div class="card"><div class="icon">🤝</div><h3>Corporate Partnerships</h3><p>Tailored service agreements for hotels, event planners, and business leaders.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FORM INPUTS -->
+<section class="section input" id="early">
+  <div class="container">
+    <h2>We’re Shaping the Next Level of Island Luxury — and We’d Value Your Input.</h2>
+    <div class="forms">
+      <div>
+        <div id="client-form-success" class="success-message">Thank you! We've received your request.</div>
+        
+<!-- EARLY ACCESS FORM -->
+<form onsubmit="handleSubmit(event, 'client-form')" id="client-form" action="https://script.google.com/macros/s/AKfycbxh2H7VuslQbigWeAbeZfBjsQxQgJ9noN1gUZOKIUgMaK6bdrmxIzJoATKybQihSD0y/exec" method="POST">
+  <div class="form-title">Join Early Access</div>
+  <label for="ea_name">Name*</label>
+  <input id="ea_name" name="name" required>
+
+  <label for="ea_email">Email*</label>
+  <input id="ea_email" type="email" name="email" required>
+
+  <label for="ea_phone">Phone</label>
+  <input id="ea_phone" name="phone">
+
+  <label for="ea_role">Role</label>
+  <select id="ea_role" name="role">
+    <option>Traveler / Client</option>
+    <option>Local Resident</option>
+    <option>Business Owner</option>
+    <option>Other</option>
+  </select>
+
+  <label for="ea_priority">What’s the most important quality you look for in premium transportation?</label>
+  <textarea id="ea_priority" name="priority"></textarea>
+
+  <input type="hidden" name="source" value="client">
+  <button class="btn btn-primary submit" type="submit">Request Early Access</button>
+</form>
+
+      </div>
+      <div id="partner">
+        <div id="partner-form-success" class="success-message">Thank you! Your partnership interest has been submitted.</div>
+        
+<!-- PARTNER FORM -->
+<form onsubmit="handleSubmit(event, 'partner-form')" id="partner-form" action="https://script.google.com/macros/s/AKfycbxh2H7VuslQbigWeAbeZfBjsQxQgJ9noN1gUZOKIUgMaK6bdrmxIzJoATKybQihSD0y/exec" method="POST">
+  <div class="form-title">Request Preferred Partnership</div>
+  <label for="p_name">Name*</label>
+  <input id="p_name" name="name" required>
+
+  <label for="p_email">Email*</label>
+  <input id="p_email" type="email" name="email" required>
+
+  <label for="p_phone">Phone</label>
+  <input id="p_phone" name="phone">
+
+  <label for="p_org">Organization</label>
+  <input id="p_org" name="organization">
+
+  <label for="p_role">Role</label>
+  <input id="p_role" name="role">
+
+  <label for="p_requirements">What would you need from a provider to confidently refer guests?</label>
+  <textarea id="p_requirements" name="requirements"></textarea>
+
+  <label for="p_preferred">Interested in a preferred partnership?</label>
+  <select id="p_preferred" name="preferred">
+    <option>Yes</option>
+    <option>No</option>
+    <option>Maybe</option>
+  </select>
+
+  <input type="hidden" name="source" value="partner">
+  <button class="btn btn-outline submit" type="submit">Send Partnership Interest</button>
+</form>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <img class="logo" src="RIES Logo_finallogo.png" alt="Red Island Elite Services Crest" />
+    <div style="font-family:'Montserrat', Arial, sans-serif; font-weight:800; letter-spacing:.4px; margin-bottom:6px;">Red Island Elite Services Inc.</div>
+    <div>Proudly based in Prince Edward Island. Built on luxury, precision, and service excellence.</div>
+    <div class="legal">© 2025 Red Island Elite Services Inc. All Rights Reserved • <a href="mailto:info@redislandelite.com">info@redislandelite.com</a></div>
+  </div>
+</footer>
+
+</body>
+</html>
